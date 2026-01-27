@@ -18,6 +18,7 @@ mkdir /tmp/_out
 cp -vf _o/7zz /tmp/_out/7z
 chmod 0755 /tmp/_out/7z
 file _o/7zz
+ldd _o/7zz || true
 ./_o/7zz --version 2>&1 | sed 's/ ([^)]*)//g; s/ /-/g' > /tmp/_out/version.txt
 cat /tmp/_out/version.txt
 cd /tmp
