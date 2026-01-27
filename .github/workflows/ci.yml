@@ -13,7 +13,7 @@ jobs:
           sudo apt autoremove --purge -y needrestart || true
           sudo apt install -y bash wget curl openssl
           sudo ln -svf bash /bin/sh
-          sudo wget https://raw.githubusercontent.com/icebluey/docker/refs/heads/master/install/clean-os.sh -O /tmp/clean-os.sh
+          sudo wget https://raw.githubusercontent.com/icebluey/docker/refs/heads/master/scripts/clean-os.sh -O /tmp/clean-os.sh
           sudo bash /tmp/clean-os.sh
           sudo wget https://raw.githubusercontent.com/icebluey/docker/refs/heads/master/install/ubuntu/install-for-docker.sh -O /tmp/install-for-docker.sh
           sudo bash /tmp/install-for-docker.sh
