@@ -14,6 +14,7 @@ make -j$(nproc) -f makefile.gcc CC="gcc" CXX="g++" LDFLAGS="-static -no-pie" IS_
 rm -fr /tmp/_out
 mkdir /tmp/_out
 cp -vf _o/7zz /tmp/_out/7z
+chmod 0755 /tmp/_out/7z
 ./_o/7zz --version 2>&1 | sed 's/ ([^)]*)//g; s/ /-/g' > /tmp/_out/version.txt
 cd /tmp
 rm -fr "${_tmp_dir}"
