@@ -6,3 +6,5 @@ build static [7-Zip-zstd](https://github.com/mcmilk/7-Zip-zstd) binary in Alpine
 Permanent link to latest release data.
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/icebluey/7zip-zstd?style=flat)](https://github.com/icebluey/7zip-zstd/releases)
+
+`https://github.com/icebluey/7zip-zstd/releases/latest/download/7z`
