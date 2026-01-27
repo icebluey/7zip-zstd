@@ -23,5 +23,22 @@ jobs:
           sudo df -Th
 
       - name: Build
+        run: sudo /bin/bash run-alpine.sh
+
+      - name: Generate release tag env
         run: |
-          sudo /bin/bash run-alpine.sh
+          _release_ver="$(cat /tmp/_out/version.txt)"
+          echo "_release_ver=${_release_ver}" >> $GITHUB_ENV
+
+      - name: Upload files
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env._release_ver }}
+          files: /tmp/_output/7z
+          overwrite_files: true
+
+      - name: Delete
+        run: |
+          sed -e "/^_release_ver=/d" -i $GITHUB_ENV
+          sudo rm -fr /tmp/_output
+
