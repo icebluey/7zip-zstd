@@ -15,7 +15,8 @@ make -j$(nproc) -f makefile.gcc CC="gcc" CXX="g++" LDFLAGS="-static -no-pie" IS_
 /bin/ls -la _o/
 rm -fr /tmp/_out
 mkdir /tmp/_out
-cp -vf _o/7zz /tmp/_out/7z
+cp -f _o/7zz /tmp/_out/7z
+sleep 1
 chmod 0755 /tmp/_out/7z
 file _o/7zz
 ldd _o/7zz || true
