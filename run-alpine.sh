@@ -19,4 +19,5 @@ docker exec alpi /bin/ln -svf bash /bin/sh
 docker exec alpi /bin/bash -c '/bin/rm -fr /tmp/*'
 docker cp build.sh alpi:/home/build.sh
 docker exec alpi /bin/bash /home/build.sh
+docker cp alpi:/tmp/_out /tmp/
 exit
