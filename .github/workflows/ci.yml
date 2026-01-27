@@ -1,0 +1,23 @@
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup
+        run: |
+          sudo apt update -y -qqq
+          sudo apt autoremove --purge -y needrestart || true
+          sudo apt install -y bash wget
+          sudo ln -svf bash /bin/sh
+          sudo /bin/bash scripts/clean-os.sh
+          sudo /bin/rm -fr /tmp/*
+          sudo /bin/bash scripts/install-docker.sh
+          sudo df -Th
+
+      - name: Build
+        run: |
+          sudo /bin/bash run-alpine.sh
