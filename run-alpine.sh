@@ -17,5 +17,6 @@ sleep 2
 docker exec alpi apk add --no-cache bash git wget vim curl openssl ca-certificates build-base
 docker exec alpi /bin/ln -svf bash /bin/sh
 docker exec alpi /bin/bash -c '/bin/rm -fr /tmp/*'
-docker exec alpi /bin/bash build.sh
+docker cp build.sh alpi:/home/build.sh
+docker exec alpi /bin/bash /home/build.sh
 exit
