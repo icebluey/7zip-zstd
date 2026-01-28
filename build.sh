@@ -3,6 +3,8 @@ export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 TZ='UTC'; export TZ
 umask 022
 
+gcc -v && echo && g++ -v && echo
+
 set -euo pipefail
 
 _tmp_dir="$(mktemp -d)"
