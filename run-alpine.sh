@@ -2,7 +2,7 @@
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 TZ='UTC'; export TZ
 umask 022
-set -e
+set -euo pipefail
 systemctl start docker
 sleep 5
 echo
