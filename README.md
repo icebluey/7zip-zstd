@@ -7,4 +7,4 @@ Permanent link to latest release data.
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/icebluey/7zip-zstd?style=flat)](https://github.com/icebluey/7zip-zstd/releases)
 
-`https://github.com/icebluey/7zip-zstd/releases/latest/download/7z`
+` 'https://github.com/icebluey/7zip-zstd/releases/latest/download/7z' `
