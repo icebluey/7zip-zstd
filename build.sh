@@ -12,8 +12,7 @@ git clone https://github.com/mcmilk/7-Zip-zstd.git
 
 cd 7-Zip-zstd/CPP/7zip/Bundles/Alone2
 make -j$(nproc) -f makefile.gcc CC="gcc" CXX="g++" LDFLAGS="-static -no-pie" IS_X64=1
-
-/bin/ls -la _o/
+sleep 1
 rm -fr /tmp/_out
 mkdir /tmp/_out
 cp -f _o/7zz /tmp/_out/7z
