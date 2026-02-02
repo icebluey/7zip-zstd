@@ -10,8 +10,7 @@ set -euo pipefail
 _tmp_dir="$(mktemp -d)"
 cd "${_tmp_dir}"
 
-#git clone https://github.com/mcmilk/7-Zip-zstd.git
-git clone https://github.com/icebluey/7-Zip-zstd.git
+git clone https://github.com/mcmilk/7-Zip-zstd.git
 
 cd 7-Zip-zstd/CPP/7zip/Bundles/Alone2
 make -j$(( $(nproc) > 1 ? $(nproc) - 1 : 1 )) -f makefile.gcc CC="gcc" CXX="g++" LDFLAGS="-static -no-pie" IS_X64=1
