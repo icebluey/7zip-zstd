@@ -29,7 +29,7 @@ cat /tmp/_out/version.txt
 cd /tmp/_out
 tar -cf 7z.tar 7z
 sleep 1
-openssl dgst -r -sha256 7z.tar > 7z.tar.sha256
+sha256sum -b 7z.tar > 7z.tar.sha256
 rm -f 7z
 
 cd /tmp
