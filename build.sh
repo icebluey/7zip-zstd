@@ -23,6 +23,7 @@ chmod 0755 /tmp/_out/7z
 
 file _o/7zz
 ldd _o/7zz || true
+./_o/7zz i 2>&1
 ./_o/7zz --version 2>&1 | sed 's/ ([^)]*)//g; s/ /-/g' > /tmp/_out/version.txt
 cat /tmp/_out/version.txt
 
