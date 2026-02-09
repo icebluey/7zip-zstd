@@ -10,10 +10,16 @@ set -euo pipefail
 _tmp_dir="$(mktemp -d)"
 cd "${_tmp_dir}"
 
+mkdir asm && cd asm
+wget -q -c -t 9 -T 9 'https://github.com/Terraspace/UASM/releases/download/v2.57r/uasm257_linux64.zip'
+unzip uasm*.zip
+install -v -m 0755 uasm /usr/bin/
+cd ../ && rm -fr asm
+
 git clone https://github.com/mcmilk/7-Zip-zstd.git
 
 cd 7-Zip-zstd/CPP/7zip/Bundles/Alone2
-make -j$(( $(nproc) > 1 ? $(nproc) - 1 : 1 )) -f makefile.gcc CC="gcc" CXX="g++" LDFLAGS="-static -no-pie" IS_X64=1
+make CC="gcc" CXX="g++" LDFLAGS="-static -no-pie" -j$(( $(nproc) > 1 ? $(nproc) - 1 : 1 )) -f makefile.gcc IS_X64=1 USE_ASM=1 MY_ASM=uasm
 sleep 1
 rm -fr /tmp/_out
 mkdir /tmp/_out
