@@ -38,6 +38,7 @@ jobs:
           sudo ./_o/7zz --version 2>&1 | sed 's/ ([^)]*)//g; s/ /-/g' > /tmp/_out/version.txt
           cat /tmp/_out/version.txt
           cd /tmp/_out
+          sudo file 7z | sed -n -E 's/^(.*):[[:space:]]*ELF.*, not stripped.*/\1/p' | xargs --no-run-if-empty -I '{}' sudo strip '{}'
           sudo tar -cf 7z.tar 7z
           sleep 1
           sudo sha256sum -b 7z.tar > 7z.tar.sha256
