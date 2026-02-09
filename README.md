@@ -1,7 +1,7 @@
 # 7zip-zstd
 build static [7-Zip-zstd](https://github.com/mcmilk/7-Zip-zstd) binary in Alpine.
 
-[![build](https://github.com/icebluey/7zip-zstd/actions/workflows/ci.yml/badge.svg)](https://github.com/icebluey/7zip-zstd/actions/workflows/ci.yml)
+[![build](https://github.com/icebluey/7zip-zstd/actions/workflows/host.yml/badge.svg)](https://github.com/icebluey/7zip-zstd/actions/workflows/host.yml)
 
 Permanent link to latest release data.
 
