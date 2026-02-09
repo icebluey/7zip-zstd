@@ -16,7 +16,7 @@ fi
 sleep 2
 docker exec alpi apk update
 docker exec alpi apk upgrade --no-cache
-docker exec alpi apk add --no-cache build-base pkgconf git wget openssl ca-certificates bash binutils file clang21-dev clang21 clang21-static llvm21-dev llvm21 llvm21-static unzip
+docker exec alpi apk add --no-cache build-base pkgconf git wget openssl ca-certificates bash binutils file clang21-dev clang21 clang21-static llvm21-dev llvm21 llvm21-static unzip gcompat
 docker exec alpi /bin/ln -svf bash /bin/sh
 docker exec alpi /bin/bash -c '/bin/rm -fr /tmp/*'
 docker cp build.sh alpi:/home/build.sh
