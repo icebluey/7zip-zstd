@@ -11,7 +11,7 @@ echo
 if [ "$(cat /proc/cpuinfo | grep -i '^processor' | wc -l)" -gt 1 ]; then
     docker run --cpus="$(cat /proc/cpuinfo | grep -i '^processor' | wc -l).0" --rm --name alpi -itd alpine:3.23
 else
-    docker run --rm --name alpi -itd alpine:3.23
+    docker run --rm --name alpi -itd alpine:3.24
 fi
 sleep 2
 docker exec alpi apk update
